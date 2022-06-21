@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block title %}
+  新增api监控
+{% endblock %}
+
+{% block content %}
+    <div class="ui container">
+      <div class="center aligned column">
+        <h2>新增api监控</h2>
+
+        <h2 class="ui dividing header"></h2>
+
+        <form class="ui form config-add-form" style="display:block;">
+          <div class="config-add">
+            <div class="three fields">
+              <div class="field">
+                <label>应用名称：</label>
+                <input name="app_name" type="text">
+              </div>
+              <div class="field">
+                <label>接口描述</label>
+                <input name="desc" type="text">
+              </div>
+              <div class="field">
+                <label>所属产品线名称</label>
+                <div class="field">
+                  <select name="group" class="ui dropdown">
+                    {% for item in groups %}
+                      <option value={{ item }} selected>{{ item }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- 请求方法/URL -->
+            <div class="three fields"> 
+              <div class="field">
+                <label>请求方式</label>
+                <div class="field">
+                  <select name="method" class="ui dropdown">
+                    <option value="GET" selected>GET</option>
+                    <option value="POST">POST</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label>请求域名或者IP:PORT</label>
+                <input name="domain" type="text">
+              </div>
+              <div class="field">
+                <label>请求URL</label>
+                <input name="url" type="text">
+              </div>
+            </div>
+            <!-- 请求参数 -->
+            <div class="field parameters-field">
+              <label>请求参数（键值对形式）</label>
+              <div class="inline fields parameters-row" style="display:none;">
+                <div class="four wide field">
+                  <label>键：</label>
+                  <input name="parameter-key" type="text">
+                </div>
+                <div class="eight wide field">
+                  <label>值：</label>
+                  <input name="parameter-value" type="text">
+                </div>
+                <div class="one wide field">
+                  <i class="remove icon"></i>
+                </div>
+              </div>
+              <div class="field">
+                <a class="parameter-add">增加请求参数</a>
+              </div>
+            </div>
+            <div class="two fields">
+              <!-- 请求调用间隔 -->
+              <div class="field">
+                <label>请求定时间隔(秒)：</label>
+                <input name="seconds" type="text">
+              </div>
+              <!-- 请求headers.content-type -->
+              <div class="field content-type-field">
+                <label>请求headers（content-type）：</label>
+                <div class="field">
+                  <select name="content_type" class="ui dropdown">
+                    <option value="json" selected>json</option>
+                    <option value="x-www-form-urlencoded">x-www-form-urlencoded</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- 请求结果验证 -->
+            <div class="field asserts-field">
+              <label>请求结果验证（默认http_responce_status=200，仅支持键值对形式）：</label>
+              <div class="inline fields asserts-row" style="display:none;">
+                <div class="field">
+                  <label>验证字段名：</label>
+                  <input name="assert-key" type="text">
+                </div>
+                <div class="field">
+                  <label>验证比较方式：</label>
+                  <select name="assert-comparison" class="ui dropdown assert-comparison-dropdown">
+                    <option value="1" selected>等于</option>
+                    <option value="2">不等于</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>目标值：</label>
+                  <input name="assert-value" type="text">
+                </div>
+                <div class="field">
+                  <i class="remove icon"></i>
+                </div>
+              </div>
+              <div class="field">
+                <a class="assert-add">增加验证</a>
+              </div>
+            </div>
+          </div>
+          <div class="ui right teal submit button">提交</div>
+          <div class="config-add-form-msg ui error message"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

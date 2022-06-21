@@ -1,0 +1,141 @@
+ticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  background: #f6f6f6;
+  font-family: 'Open Sans','Helvetica Neue',Arial,'Hiragino Sans GB','Microsoft YaHei','WenQuanYi Micro Hei',sans-serif;
+}
+.hr-nav {
+  border: 0;
+  border-top: 3px solid #ecf0f1;
+}
+.hr-content {
+  border-top: 1px solid #edeeef;
+}
+.page-wrap {
+  position: relative;
+  min-height: 100%;
+}
+.header-navbar {
+  min-height: 60px;
+}
+.menu-btn-container {
+  margin-top: 20px;
+  float: left;
+}
+.menu-btn-container .menu-btn {
+  position: relative;
+  height: 20px; 
+  cursor: pointer;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  position: relative;
+  max-width: 680px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+/* ====== essay-item css ====== */
+.e-item {
+  max-width: 100%;
+}
+.e-item-title {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  color: #414243;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.e-item-sinfo {
+  margin: 15px;
+  color: #9d9e9f;
+  font-size: 15px;
+}
+.bull {
+  margin: 0 3px;
+}
+.e-item-content {
+  color: #414243;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  overflow: hidden;
+  width: 100%;
+}
+.item-prev-next {
+  border: 1px solid #edeeef;
+}
+.item-link {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  font-size: 16px;
+  color: #414243;
+  text-decoration: None;
+}
+.item-link:hover {
+  background-color:rgba(0,0,0,.025);
+  text-decoration:none
+}
+.prev {
+  padding: 30px 30px 30px 74px;
+}
+.next {
+  padding: 30px 74px 30px 30px;
+  text-align: right;
+}
+
+/* ===== sidebar ===== */
+.sidebar {
+  height: 100%;
+  position: fixed;
+  left: -260px;
+  top: 0;
+  background: #1e2b2e;
+  width: 260px;
+  z-index: 10000;
+  overflow: hidden;
+  padding-top: 46px;
+}
+.sidebar a {
+  width: 100%;
+  display: inline-block;
+  color: #708286;
+  text-align: right;
+  font-size: 14px;
+  margin: 14px 0 0 -32px;
+  text-decoration: none;
+}
+.sidebar a:hover {
+  color: #D0D0D0;
+
+}
+a.sidebar-link {
+  opacity: 1;
+  color: #708286;
+  transition: color 100ms;
+}

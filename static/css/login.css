@@ -1,0 +1,545 @@
+body {
+    font: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif, "Microsoft YaHei";
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+.container {
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
+}
+.container .columns {
+    float: left;
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.top-row {
+    margin-bottom: 20px;
+}
+.multi-row {
+    margin-top: 40px;
+}
+.columns.alpha {
+    margin-left: 0;
+}
+.columns.omega {
+    margin-right: 0;
+}
+
+.container .sixteen.columns {
+    width: 940px;
+}
+.container .eleven.columns {
+    width: 640px;
+    float: left;
+}
+.container .five.columns {
+    width: 280px;
+    float: left;
+}
+.container .six.columns { 
+    width: 340px; 
+}
+.container .seven.columns { 
+    width: 400px; 
+}
+.container .four.columns { 
+    width: 220px; 
+}
+.container .offset-by-one {
+    padding-left: 60px;
+}
+
+.content {
+    /*font: 20px Georgia, serif;*/
+    font-family: punctuation,'Microsoft Yahei';
+}
+.sidebar {
+    font: 13px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+nav ul, nav ol { 
+    list-style: none; 
+    list-style-image: none; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.row, .clearfix {
+    zoom: 1;
+}
+
+/* ====== Base styles ====== */
+
+/* ====== Header ====== */
+.header {
+    padding: 30px 0;
+    border-bottom: 3px solid #dadada;
+    margin-bottom: 40px;
+}
+.header-logo {
+    position: relative;
+    top: 7px;
+}
+.header-logo a{
+    font-size: 32px;
+}
+.top-nav-wrapper {
+    text-align: right;
+    font-size: 13px;
+    font-weight: bold;
+}
+.top-nav-list {
+    margin-top: 18px;
+    font-size: 14px;
+}
+.top-nav-list a {
+    color: #000;
+    margin-bottom: 2px;
+    margin-right: 2px;
+    padding: 8px 12px;
+}
+.top-nav-list a:hover {
+    background-color: #eee;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.menu-item {
+    display: inline;
+}
+.menu-item .user-avatar{
+    margin-left: 20px;
+}
+
+/* ====== Sidebar ====== */
+.sidebar-rss a {
+    color: #3f3f3f;
+    font-weight: bold;
+}
+.sidebar-follow a {
+    color: #3f3f3f;
+    font-weight: bold;
+}
+
+/* ====== Footer ====== */
+.footer {
+    color: #7f7f7f;
+    border-top: 3px solid #dadada;
+    font-size: 13px;
+    padding: 40px;
+}
+.footer a {
+    color: #7f7f7f;
+}
+
+/* ====== panel css ====== */
+.panel {
+    margin-bottom: 20px;
+    /* background-color: #FFF; */
+    border: 2px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.17);
+}
+.panel-tab {
+    height: 47px;
+    font-size: 16px;
+    border-bottom: 2px solid #dadada;
+}
+.panel-tab li {
+    float: left;
+    display: inline;
+    overflow: visible;
+}
+.panel-tab .tab-current {
+    background: #fff;
+    border-top: solid 2px #00a2ca;
+    border-bottom-width: 0;
+    padding: 4px 33px 4px;
+    color: #000;
+    text-decoration: none;
+    z-index: 1;
+}
+.panel-tab li .panel-item {
+    border: solid 1px #ddd;
+    background: #fbfaf8;
+    height: 38px;
+    min-width: 130px;
+    margin-left: -1px;
+    padding: 4px 33px 4px;
+    color: #666;
+}
+
+/* ====== diary css ====== */
+.new-diary {
+    font: 13px 'Microsoft Yahei';
+}
+.new-diary .diary-title {
+  
+}
+.new-diary .diary-input {
+    margin: 0;
+    padding: 0;
+}
+.new-diary .diary-input .diary-input-area{
+    width: 100%;
+    height: 60px;
+    line-height: 20px;
+    padding: 3px 8px 5px;
+    background: none;
+    font-size: 14px;
+    box-shadow: inset 0 2px 4px 0 rgba(0,0,0,.04);    
+}
+.new-diary .diary-func-area {
+    display: inline-block;
+}
+.new-diary .diary-func-area .kind {
+    float: left;
+}
+.new-diary .diary-func-area .func {
+    float: right;
+}
+.d-btn-submit {
+    float: right;
+}
+.diary {
+    padding: 9px 15px;
+    border: 1px solid #FFF;
+  box-shadow: 1px 1px 1px #DFDFDF;
+}
+.diary .diary-content {
+    font-size: 14px;
+    padding: 1px 0 3px;
+  overflow: hidden;
+  line-height: 23px;
+}
+.diary-footer {
+    display: inline;
+}
+.diary-footer .time {
+    display: inline-block;
+    font-size: 12px;
+    color: #8c8c8c;
+}
+.diary-footer .op {
+    display: inline-block;
+    float: right;
+}
+.diary-footer .op a {
+    color: #808080;
+}
+
+/* ====== essay css ====== */
+.essays ul {
+    list-style: none;
+}
+.essays ul >li {
+    padding-bottom: 17px;
+    margin: 0 0 17px;
+    border-bottom: 1px dashed #d9d9d9;
+}
+.essay-list-sinfo {
+    font-size: 12px;
+    color: #999999;
+}
+.essay-list-title a {
+    margin: 0;
+    color: #555;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.diary-list-sinfo {
+    font-size: 12px;
+    color: #999999;
+}
+/* ====== login css ====== */
+.body-login {
+    background: #303030;
+    width: 100%;
+    height: 100%;
+}
+.body-login .login-container {
+    font-family: 微软雅黑;
+    margin: 0px auto;
+        width: 300px;
+    color: #fff;
+}
+.login-form {
+    margin-top: 111.5px;
+}
+.login {
+    margin: 0px auto;
+        height: 50px;
+        line-height: 50px;
+        background: url(../images/login-bg.png) no-repeat;
+        margin-top: 10px;
+    margin-bottom: 10px;
+        position: relative;
+}
+.logo-user {
+    background: url(../images/usericon.png) no-repeat;
+    background-position: 10px 11px;
+    color: #ffffff;
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    height: 50px;
+    opacity: 0.99;
+    width: 200px;
+    padding-left: 62px;
+    text-align: left;
+}
+.login-input {
+    float: left;
+    padding-left: 10px;
+    width: 224px;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    border-left: 1px solid #ffffff;
+    background: none;
+    font-size: 14px;
+    color: #fff;
+    top: 10px;
+    left: 50px;
+    position: absolute;
+}
+.logo-password {
+    background: url(../images/passicon.png) no-repeat;
+    background-position: 10px 11px;
+    color: #ffffff;
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    height: 50px;
+    opacity: 0.99;
+    width: 200px;
+    padding-left: 62px;
+    text-align: left;
+}
+.login-btn {
+    cursor: pointer;
+    height: 50px;
+    border: 0;
+    background: #25292e;
+    font-family: 微软雅黑;
+    font-size: 18px;
+    color: #ffffff;
+    margin-top: 9px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.login-msg {
+    margin: 0px auto;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #3F3F3F;
+    color: rgb(152, 152, 152);
+}
+.login-q {
+    display: inline;
+    margin: 0px auto;
+    height: 50px;
+    position: relative;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+}
+.login-q-icon {
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    margin: 0px;
+    position: relative;
+    vertical-align: text-top;
+}
+.login-qq {
+    background: url(../images/qqnormal.png) no-repeat;
+    margin-left: 5px;   
+}
+.login-weibo {
+    background: url(../images/weibonormal.png) no-repeat;
+    margin-left: 5px;
+}
+.login-douban {
+    background: url(../images/doubannormal.png) no-repeat;
+    margin-left: 5px;
+}
+.reg-text {
+    float: right;
+    font-weight: bold;
+    position: relative;
+    color: white;
+    text-decoration: underline;
+}
+
+/* ====== register css ====== */
+.reg-label {
+    color: rgb(152, 152, 152);
+    margin-left: -80px;
+}
+.reg-code {
+    margin: 0px auto;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 14px;
+}
+.reg-reload {
+    cursor: pointer;
+    color: rgb(152, 152, 152);
+}
+.code-input {
+    float: left;
+    padding-left: 10px;
+    width: 224px;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    border-left: 1px solid #ffffff;
+    background: none;
+    font-size: 14px;
+    color: #fff;
+    top: 10px;
+    left: 50px;
+    position: absolute;
+}
+
+/* ====== error css ====== */
+
+.msg-error {
+    text-align: center;
+    color: #9d9e9f;
+    padding: 110px 0;
+}
+.icon-error {
+    background-image: url(../images/error.png); 
+    display: block;
+        margin: 0 auto 20px;
+        width: 110px;
+        height: 134px;
+}
+
+/* ====== qingshu register css ====== */
+
+.body-bound-qs {
+    background: #f9f9f9;
+    font-family: 'Microsoft Yahei';
+}
+.bound-container {
+    position: relative;
+    max-width: 858px;
+    margin: 0 auto;
+    padding: 0;
+}
+.clearfix {
+    zoom: 1;
+}
+.bound-header-tabs {
+    font-size: 16px;
+    width: 100%;
+    height: 70px;
+    margin-top: 40px;
+}
+.bound-header-tabs ul {
+    list-style: none;
+}
+.bound-header-tabs ul li {
+    width: 50%;
+    float: left;
+}
+.bound-header-tabs ul li.active {
+    border-bottom: 2px solid #2f63ba;
+}
+.bound-content {
+    background: #FFF;
+    margin-bottom: 10px;
+    border: 1px solid #EAEAEA;  
+    border-radius: 2px;
+}
+.bound-form {
+    padding: 60px 0 75px 75px;
+}
+.bound {
+    margin: 20px 0;
+}
+.bound-label {
+    color: #466230;
+    font-weight: bold;
+}
+.bound-input {
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    padding: 6px 5px;
+    width: 365px;
+    line-height: 23px;
+    text-align: center;
+}
+.bound-radio {
+    display: inline;
+}
+.bound-radio .sex {
+    font-size: 12px;
+}
+.bound .menu {
+    cursor: pointer;
+    min-height: 28px;
+    border: 1px solid rgba(39,41,43,.15);
+    border-radius: .2857rem;
+}
+.bound .menu .item {
+}
+.bound-btn {
+    background: #F73E3E;
+    color: #FFF;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 42px;
+    margin: 0;
+    width: 300px;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    vertical-align: top;
+}
+#bound-photos .photo-upload {
+    cursor: pointer;
+    background: #EEE;
+    height: 107px;
+    width: 107px;
+}
+.photo-upload-tips {
+    color: #999;
+    font-size: 14px;
+}
+.photo-upload .photo-upload-item-tips {
+    color: #999;
+    padding-top: 30px;
+    text-align: center;
+}
+.row.horizontal.divider {
+    margin: 3em 0em;
+}
+.user-page {
+    position: relative;
+    min-height: 500px;
+}
+.main {
+    min-height: 100%;
+    margin-bottom: -112px;
+}
+.machine-list-sinfo-time {
+    float: right;
+}

@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}
+  配置信息
+{% endblock %}
+
+{% block content %}
+    <div class="ui container">
+      <div class="center aligned column">
+        <h2>接口配置信息</h2>
+        <h2 class="ui dividing header"></h2>
+        <form class="ui form config-info" style="display:block;">
+          <div class="config-info">
+            <div class="field">
+              <label>应用名称：</label>
+              <input name="tp_name" type="text" value={{ res.app_name }} disabled>
+            </div>
+            <div class="field">
+              <label>接口描述</label>
+              <input name="tp_desc" type="text" value="{{ res.desc }}" disabled>
+            </div>
+            <div class="field">
+              <label>所属产品线名称</label>
+              <input name="tp_group" type="text" value={{ res.group }} disabled>
+            </div>
+            <!-- 请求方法/URL -->
+            <div class="field">
+              <label>请求方式</label>
+              <input name="tp_method" type="text" value={{ res.method }} disabled>
+            </div>
+            <div class="field">
+              <label>请求URL</label>
+              <input name="url" type="text" value="{{ res.domain }}{{ res.url }}" disabled>
+            </div>
+            <!-- 请求参数 -->
+            <div class="field parameters-field">
+              <label>请求参数</label>
+              {% for key, value in res["data"].iteritems() %}
+              <div class="inline fields parameters-row">
+                <div class="four wide field">
+                  <input name="parameter-key" type="text" value={{ key }} disabled>
+                </div>
+                <div class="eight wide field">
+                  <input name="parameter-value" type="text" value={{ value }} disabled>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            <!-- 请求调用间隔 -->
+            <div class="field">
+              <label>请求定时间隔(秒)：</label>
+              <input name="seconds" type="text" value="{{ res.seconds }}" disabled>
+            </div>
+            <!-- 请求headers -->
+            <div class="field headers-field">
+              <label>请求headers：</label>
+              {% for key, value in res["headers"].iteritems() %}
+              <div class="inline fields headers-row" style="display:none;">
+                <div class="four wide field">
+                  <input name="header-key" type="text" value={{ key }} disabled>
+                </div>
+                <div class="eight wide field">
+                  <input name="header-value" type="text" value={{ value }} disabled>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            <!-- 请求结果验证 -->
+            <div class="field asserts-field">
+              <label>请求结果验证：</label>
+              {% for assertion in res["assertions"] %}
+              <table class="ui very basic table assertions-table">
+                <thead>
+                  <tr>
+                    <th class="assertions-th six wide">验证字段名</th>
+                    <th class="assertions-th three wide">验证比较方式</th>
+                    <th class="assertions-th seven wide">目标值</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="asserts-row">
+                    <td>
+                      <input name="assert-value" type="text" value="{{ assertion.assert_key }}" disabled>
+                    </td>
+                    <td>
+                      {% if assertion.assert_comparison == "1" %}
+                        <input name="assert-value" type="text" value="等于" disabled>
+                      {% elif assertion.assert_comparison == "2" %}
+                        <input name="assert-value" type="text" value="列表不为空" disabled>
+                      {% endif %}
+                    </td>
+                    <td>
+                      <input name="assert-value" type="text" value="{{ assertion.assert_value }}" disabled>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              {% endfor %}
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

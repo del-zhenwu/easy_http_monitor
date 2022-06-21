@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}
+  dashboard
+{% endblock %}
+
+{% block content %}
+  <div class="ui center aligned">
+    <div class="center aligned column">
+      <h2>
+      </h2>
+    </div>
+    <div class="ui" style="overflow: auto">
+      <h2 class="ui dividing header"></h2>
+      <table class="ui striped selectable celled structured table">
+        <thead>
+          <tr>
+            <th>所属产品线名</th>
+            <th>应用名</th>
+            <th>服务地址</th>
+            <th>请求URL</th>
+            <th>请求方法</th>
+            <th>请求间隔时长</th>
+            <th>停止</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for group, group_info in res.iteritems() %}
+            {% for app_name, app_item in group_info.iteritems() %}
+              {% for item in app_item %}
+              <tr>
+                <td>{{ group }}</td>
+                <td>{{ app_name }}</td>
+                <td>{{ item['domain'] }}</td>
+                <td>{{ item['url'] }}</td>
+                <td>{{ item['method'] }}</td>
+                <td>{{ item['seconds'] }}</td>
+                <td data-value={{ item["_id"] }}><a class="remove_config" href="#"><i class="minus circle icon"></i></a></td>
+              <tr>
+              {% endfor %}
+            {% endfor %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

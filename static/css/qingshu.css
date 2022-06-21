@@ -1,0 +1,30 @@
+body {
+  font-family: '微软雅黑';
+}
+.qingshu-container {
+  width: 860px;
+  margin: 0 auto;
+  padding: 0;
+}
+.user-card-info {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 7;
+  height: 100%;
+}
+.user-panel-info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.bg2 {
+  background-image: url("../images/2.jpg");
+  padding: 0em;
+  height: 300px;
+}
+.yh {
+  font-size: 14px;
+}
+
